@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: org.babashka/sci:0.2.9-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/babashka/sci/0.2.9-SNAPSHOT/sci-0.2.9-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
