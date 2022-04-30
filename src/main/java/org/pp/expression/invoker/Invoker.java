@@ -2,39 +2,46 @@ package org.pp.expression.invoker;
 
 import clojure.java.api.Clojure;
 import clojure.lang.IFn;
+import org.pp.api.expression.Expression;
 
 import java.util.function.Function;
 
 /**
  * @author lgy
  */
-public class Invoker {
-    private static final IFn require=Clojure.var("clojure.core", "require");
+public final class Invoker implements Expression {
+    private static final IFn require = Clojure.var("clojure.core", "require");
     private final static Invoker invoker = new Invoker();
+    private final static String NS = "org.pp.expression.core";
 
     private final IFn evalFn;
     private final IFn register;
 
 
     private Invoker() {
-        require.invoke(Clojure.read("scs.core"));
-        IFn init = Clojure.var("scs.core", "init");
-        evalFn = Clojure.var("scs.core", "eval-script");
-        register = Clojure.var("scs.core", "register-by-source");
+        require.invoke(Clojure.read(NS));
+        IFn init = Clojure.var(NS, "init");
+        evalFn = Clojure.var(NS, "eval-script");
+        register = Clojure.var(NS, "register-by-source");
         init.invoke();
     }
 
-    public static Object eval(String script, Function<String, Object> fieldProvider,
-                              Function<String, Object> conProvider, Function<String, Object> tableProvider) {
+
+    @Override
+    public Object eval(String script, Function fieldProvider,
+                       Function conProvider, Function tableProvider) {
         return invoker.evalFn.invoke(script, fieldProvider, conProvider, tableProvider);
     }
 
-    public static void register(String ns, String source) {
+    public void register(String ns, String source) {
         invoker.register.invoke(ns, source);
     }
 
     public static void main(String[] args) {
-       // register("foo","(ns foo) (defn val1[] :foo) (defn v3[] 1)");
-        System.out.println(eval("",null,null,null));
+
+        Invoker.invoker.register("foo", "(ns foo) (defn val1[] :foo) (defn v3[] 1)");
+        System.out.println(Invoker.invoker.eval("", null, null, null));
     }
+
+
 }

@@ -1,4 +1,4 @@
-(ns scs.lib
+(ns org.pp.expression.lib
   (:gen-class))
 
 

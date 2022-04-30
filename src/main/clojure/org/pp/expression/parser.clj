@@ -1,4 +1,4 @@
-(ns scs.parser
+(ns org.pp.expression.parser
   (:gen-class)
   (:require [instaparse.core :as insta]))
 

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.babashka:sci:0.2.9-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/babashka/sci/0.2.9-SNAPSHOT/sci-0.2.9-20220208.225747-31.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/babashka/sci/0.2.9-SNAPSHOT/sci-0.2.9-20220208.225747-31-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/babashka/sci/0.2.9-SNAPSHOT/sci-0.2.9-20220208.225747-31-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

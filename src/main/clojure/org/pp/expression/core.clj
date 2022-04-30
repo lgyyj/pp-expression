@@ -1,10 +1,10 @@
-(ns scs.core
+(ns org.pp.expression.core
   (:gen-class)
   (:require [clojure.string :as str]
             [sci.core :as sci]
-            [scs.parser :as p])
+            [org.pp.expression.parser :as p])
   (:import (java.util.function Function)
-           (scs.syntax SyntaxCompileException SyntaxException ExecuteException)))
+           (org.pp.expression.syntax SyntaxCompileException SyntaxException ExecuteException)))
 
 
 
@@ -137,5 +137,5 @@
 (defn init
   "docstring"
   []
-  (register "scs.lib"))
+  (register "org.pp.expression.lib"))
 
